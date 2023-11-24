@@ -6,13 +6,14 @@ from PIL import Image
 from transformers import pipeline
 import numpy as np
 from transformers import AutoFeatureExtractor, AutoModelForImageClassification
+from huggingface_hub import from_pretrained_keras
 
 st.title("Sports Image Classification")
 
 st.write("Predict the sport that is being represented in the image.")
 
 #model = load_model("my_model.keras")
-
+model = from_pretrained_keras("keras-io/Image-Classification-using-EANet")
 extractor = AutoFeatureExtractor.from_pretrained("yangy50/garbage-classification")
 model = AutoModelForImageClassification.from_pretrained("yangy50/garbage-classification")
 
