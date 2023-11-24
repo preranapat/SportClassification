@@ -11,7 +11,7 @@ st.title("Sports Image Classification")
 
 st.write("Predict the sport that is being represented in the image.")
 
-#model = load_model("best_model.h5")
+#model = load_model("my_model.keras")
 
 extractor = AutoFeatureExtractor.from_pretrained("yangy50/garbage-classification")
 model = AutoModelForImageClassification.from_pretrained("yangy50/garbage-classification")
