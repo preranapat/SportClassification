@@ -3,12 +3,18 @@ from tensorflow.keras.models import load_model
 from utils import predict_label
 from PIL import Image
 
+from transformers import pipeline
+import numpy as np
+from transformers import AutoFeatureExtractor, AutoModelForImageClassification
+
 st.title("Sports Image Classification")
 
 st.write("Predict the sport that is being represented in the image.")
 
-model = load_model("best_model.h5")
+#model = load_model("best_model.h5")
 
+extractor = AutoFeatureExtractor.from_pretrained("yangy50/garbage-classification")
+model = AutoModelForImageClassification.from_pretrained("yangy50/garbage-classification")
 
 with st.form("my_form"):
     uploaded_file = st.file_uploader(
