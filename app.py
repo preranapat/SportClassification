@@ -13,9 +13,11 @@ st.title("Sports Image Classification")
 st.write("Predict the sport that is being represented in the image.")
 
 #model = load_model("my_model.keras")
-model = load_model("keras-io/Image-Classification-using-EANet")
+#model = load_model("keras-io/Image-Classification-using-EANet")
 #extractor = AutoFeatureExtractor.from_pretrained("yangy50/garbage-classification")
 #model = AutoModelForImageClassification.from_pretrained("yangy50/garbage-classification")
+extractor = AutoFeatureExtractor.from_pretrained("keras-io/Image-Classification-using-EANet")
+model = AutoModelForImageClassification.from_pretrained("keras-io/Image-Classification-using-EANet")
 
 with st.form("my_form"):
     uploaded_file = st.file_uploader(
